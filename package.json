@@ -1,0 +1,22 @@
+{
+  "name": "appsystema",
+  "version": "1.0.0",
+  "description": "clubs students management web service",
+  "main": "server.js",
+  "scripts" : { "start" : "node server.js" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajkula/appsystema.git"
+  },
+  "dependencies":{
+  "express":"*",
+  "body-parser":"*",
+  "mongoose":"*"
+  },
+  "author": "Greg Jeftic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajkula/appsystema/issues"
+  },
+  "homepage": "https://github.com/ajkula/appsystema#readme"
+}
