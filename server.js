@@ -100,6 +100,8 @@ app.delete('/api/cercle/:_id', function (req, res) {
     //}
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 1337);
 
-console.log('running on port 3000');
+//  app.listen(3000);
+var port = process.env.PORT;
+console.log('running on port ', port);
