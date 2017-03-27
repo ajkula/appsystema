@@ -1,0 +1,45 @@
+body {
+    margin: 5px;
+    background-color: whitesmoke;
+    font-size: 18px;
+}
+
+button {
+    position: absolute;
+    left: 220px;
+}
+
+input {
+    position: absolute;
+    left: 220px;
+}
+
+label {
+    margin: 15px;
+}
+
+hr {
+    margin-top: 5px;
+}
+
+.liste {
+    border-collapse: 5px;
+    background-color: rgba(89, 155, 235, 0.15);
+    text-shadow:  1px 1px #919198;
+}
+
+.summary {
+    border-collapse: 5px;
+    background-color: rgba(201, 145, 232, 0.15);
+    text-align: left;
+    text-shadow:  1px 1px #919198;
+    font: 700;
+}
+
+.editor {
+    border-collapse: 5px;
+    background-color: rgba(153, 191, 48, 0.15);
+    text-align: left;
+    text-shadow:  1px 1px #919198;
+    font: 700;
+}

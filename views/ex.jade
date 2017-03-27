@@ -1,0 +1,7 @@
+mixin list(id, items)
+  ul(id=id)
+    each item in items
+      div
+        hr
+        p #{item.fullName}
+          button(value=item id=edit type=button) editer

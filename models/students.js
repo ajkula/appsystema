@@ -2,6 +2,9 @@
  * Created by Greg JEFTIC on 19/11/2016.
  */
 var mongoose = require('mongoose');
+var moment = require('moment');
+
+var today = moment().format('DD MMM YYYY');
 
 // club schema
 var studentsSchema = mongoose.Schema({
@@ -42,8 +45,8 @@ var studentsSchema = mongoose.Schema({
         default: false
     },
     subscriptionDate:{
-        type: Date,
-        default: Date.now()
+        type: String,
+        default: today
     },
     isDeleted: {
         type: Boolean,
