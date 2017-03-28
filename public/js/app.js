@@ -1,5 +1,5 @@
 var header = {'Content-Type': 'application/json'};
-var postUrl = 'https://localhost:1337/api/cercle/'
+var postUrl = 'https://api-rest-1.herokuapp.com/api/cercle/'
 console.log(Date.now())
 
 angular.module('TestApp', []);
