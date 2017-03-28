@@ -1,5 +1,5 @@
 var header = {'Content-Type': 'application/json'};
-var postUrl = 'http://localhost:1337/api/cercle/'
+var postUrl = 'https://localhost:1337/api/cercle/'
 console.log(Date.now())
 
 angular.module('TestApp', []);
@@ -22,7 +22,7 @@ angular.module('TestApp')
         .then(function(response){
             console.log(response);
         }).catch(function(err){
-            console.log(err);
+            alert(JSON.stringify(err));
         })
     }
  
@@ -35,7 +35,7 @@ angular.module('TestApp')
         .then(function(response){
             console.log(response);
         }).catch(function(err){
-            alert(err);
+            alert(JSON.stringify(err));
         });
     }
 });
