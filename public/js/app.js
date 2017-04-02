@@ -14,9 +14,7 @@ angular.module('TestApp')
     }
 
     $scope.new = function(data) {
-        data.isDeleted = data.isDeleted == ( "true" || "True" || "oui" || "Oui" || "yes" || "Yes" )
-        data.yearSubscription = data.yearSubscription == ( "true" || "True" || "oui" || "Oui" || "yes" || "Yes" )
-        data.trimesterSubscription = data.trimesterSubscription == ( "true" || "True" || "oui" || "Oui" || "yes" || "Yes" )
+        isSet(data);
 
         $http.post(postUrl, data, header)
         .then(function(response){
@@ -27,9 +25,7 @@ angular.module('TestApp')
     }
  
     $scope.update = function(data) {
-        data.isDeleted = data.isDeleted == ( "true" || "True" || "oui" || "Oui" || "yes" || "Yes" )
-        data.yearSubscription = data.yearSubscription == ( "true" || "True" || "oui" || "Oui" || "yes" || "Yes" )
-        data.trimesterSubscription = data.trimesterSubscription == ( "true" || "True" || "oui" || "Oui" || "yes" || "Yes" )
+        isSet(data);
 
         $http.put(postUrl+data._id, data, header)
         .then(function(response){
@@ -37,6 +33,12 @@ angular.module('TestApp')
         }).catch(function(err){
             alert(JSON.stringify(err));
         });
+    }
+
+    function isSet(data) {
+        data.isDeleted = data.isDeleted == ( "true" || "True" || "oui" || "Oui" || "yes" || "Yes" )
+        data.yearSubscription = data.yearSubscription == ( "true" || "True" || "oui" || "Oui" || "yes" || "Yes" )
+        data.trimesterSubscription = data.trimesterSubscription == ( "true" || "True" || "oui" || "Oui" || "yes" || "Yes" )
     }
 });
 
