@@ -10,13 +10,13 @@ button {
 }
 
 .btn2 {
-    position: absolute;
-    right: 330px;
+    position: relative;
+    left: 280px;
 }
 
 input {
     position: absolute;
-    left: 220px;
+    left: 260px;
 }
 
 .liste {
@@ -27,12 +27,11 @@ input {
 
 .summary {
     position: relative;
-    border-collapse: 5px;
     background-color: rgba(201, 145, 232, 0.15);
     text-align: left;
     text-shadow:  1px 1px #919198;
-    font: 700;
     top: 25px;
+    padding-left: 40px;
 }
 
 .editor {
@@ -41,6 +40,7 @@ input {
     text-align: left;
     text-shadow:  1px 1px #919198;
     font: 700;
+    padding-left: 40px;
 }
 
 .tooltip {
@@ -72,7 +72,7 @@ input {
 
 .lefty {
     position: relative;
-    left: -320px;
+    left: -150px;
 }
 
 .tooltip .tooltiptext::after {
