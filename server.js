@@ -46,10 +46,12 @@ app.get('/api/cercle', function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
  //   if (rep.params.api == "zfaAEGf232sgs56eRRE5663") {
+     console.log("req")
         Students.getStudents(function (err, students) {
             if (err) {
                 res.send(err);
             }
+
             res.json(students);
         })
     //} else {
@@ -75,8 +77,8 @@ app.get('/api/cercle/:_id', function (req, res) {
 app.post('/api/cercle', function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-
-    var students = req.body;
+    if(!req.body) res.send("requête vide, remplissez les champs!")
+    else var students = req.body;
   //  if (rep.params.api == "zfaAEGf232sgs56eRRE5663") {
     if(req.body){
         Students.addStudents(students, function (err, students) {
@@ -94,6 +96,10 @@ app.post('/api/cercle', function (req, res) {
 app.put('/api/cercle/:_id', function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    if(!req.body || !req.params._id) res.send("requête vide ou incorrecte, remplissez les champs!")
+    else {
+        console.log(req.body);
+        
            var id = req.params._id;
            var students = req.body;
 
@@ -105,7 +111,7 @@ app.put('/api/cercle/:_id', function (req, res) {
                 res.json(students);
             //    res.json(student);
             });
-       
+        }
         //} else {
         //    res.send('UNKNOWN!!');
         //}

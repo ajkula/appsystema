@@ -6,7 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.js"></script>
 </head>
   
-<body ng-controller="MainController as vm">
+<body ng-controller="MainController as vm" ng-show="loaded">
     <details class="summary">
         <summary>Créer un nouvel élève</summary><br /><br />
         <label>Nom complet : </label>
@@ -72,7 +72,7 @@
     <br /><br /><br /><br /><br /><br /><br /><br />
     </div>
     <script>
-        var students = <%- JSON.stringify(Sstudents) %>
+      //  var students = <%- JSON.stringify(Sstudents) %>
     </script>
     <script src="/assets/js/app.js"></script>
 </body>

@@ -1,16 +1,36 @@
 var header = {'Content-Type': 'application/json'};
 var postUrl = 'https://api-rest-1.herokuapp.com/api/cercle/'
+// var postUrl = 'http://localhost:1337/api/cercle/'
 console.log(Date.now())
 
 angular.module('TestApp', []);
 
 angular.module('TestApp')
     .controller('MainController', function($scope, $http) {
-    $scope.students = students;
+        $scope.loaded = false;
+        
     $scope.obj = {};
+
+    var getStudents = function(postUrl){
+        $http.get(postUrl).then(function (response) {
+                $scope.students = [];
+                angular.forEach(response.data, function (student) {
+                    $scope.students.push(student);
+                });
+                
+                $scope.loaded = true;
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
+
+    getStudents(postUrl);
+
     $scope.pass = function(data) {
-        console.log(data);
+       // console.log(data);
         $scope.obj = data;
+
     }
 
     $scope.new = function(data) {
@@ -18,8 +38,11 @@ angular.module('TestApp')
 
         $http.post(postUrl, data, header)
         .then(function(response){
-            console.log(response);
-        }).catch(function(err){
+            data._id = response.data._id
+          //  console.log(data);
+        })
+        .then(getStudents(postUrl))
+        .catch(function(err){
             alert(JSON.stringify(err));
         })
     }
@@ -29,8 +52,10 @@ angular.module('TestApp')
 
         $http.put(postUrl+data._id, data, header)
         .then(function(response){
-            console.log(response);
-        }).catch(function(err){
+         //   console.log(response);
+        })
+        .then(getStudents(postUrl))
+        .catch(function(err){
             alert(JSON.stringify(err));
         });
     }
