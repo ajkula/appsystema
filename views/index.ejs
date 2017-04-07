@@ -3,11 +3,28 @@
 <head>
     <title>Back-Office AppSystema</title>
     <link rel="stylesheet" href="/assets/styles.css">
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.js"></script>
 </head>
   
 <body ng-controller="MainController as vm" ng-show="loaded">
-    <details class="summary">
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-1"></div>
+<div class="col-sm-7 pad">
+
+    <details class="summary well well-sm">
         <summary>Créer un nouvel élève</summary><br /><br />
         <label>Nom complet : </label>
         <input type="text" ng-model="data.fullName" ></input><br /><br />
@@ -23,26 +40,35 @@
         <input type="number" ng-model="data.lessons" ></input><br /><br />
         <label>Email : </label>
         <input type="email" ng-model="data.email" ></input><br /><br />
+        <label>Date d'inscription : </label>
+        <input type="text" ng-model="data.subscriptionDate" ></input><br /><br />
         <label>Notes/Commentaires : </label><br />
         <textarea rows="4" cols="50" ng-model="data.notes" ></textarea><br /><br />
         <label>Suppression logique : </label>
         <input type="text" ng-model="data.isDeleted" ></input><br /><br />
-        <label>Date d'inscription : </label>
-        <input type="text" ng-model="data.subscriptionDate" ></input><br /><br />
         <label>Inscrit pour trimestre : </label>
         <input type="text" ng-model="data.trimesterSubscription" ></input><br /><br />
         <label>Inscrit à l'année : </label>
         <input type="text" ng-model="data.yearSubscription" ></input><br /><br />
-        <button ng-click="new(data)" >Créer l'élève</button>
+        <button ng-click="new(data)" class="btn btn-primary" >Créer l'élève</button>
         <br /><br /><br /><br />
     </details>
  <br /><br />
-        <div class="liste" ng-repeat="student in students">
-        <hr />
-            {{ student.fullName }} <button ng-click="pass(student)">EDITER</button>
-            <br /> {{ student.club }} <br /> {{ student.lessons>0 ? student.lessons : student.notes }}
-        </div>
-   <hr />
+
+ <ul class="list-group">
+    <li class="list-group-item" ng-repeat="student in students">
+        
+            {{ student.fullName }}
+            <button class="btn btn-primary" ng-click="pass(student)">EDITER</button>
+            <br /> {{ student.club }} <br /> 
+            <p class="badge lefty" >{{ student.lessons>0 ? "Cours: " + student.lessons : "Commentaires: " + student.notes }}</p>
+            <br /> 
+    </li>
+</ul>
+        
+       
+            
+   
     <div class="editor"><br /><br />
     <label>Nom complet : </label>
     <input type="text" ng-model="obj.fullName" ></input><br /><br />
@@ -58,18 +84,22 @@
     <input type="number" ng-model="obj.lessons" ></input><br /><br />
     <label>Email : </label>
     <input type="email" ng-model="obj.email" ></input><br /><br />
-    <label>Notes/Commentaires : </label><br />
-    <textarea rows="4" cols="50" ng-model="obj.notes" ></textarea><br /><br />
-    <label>Suppression logique : </label>
-    <input type="text" ng-model="obj.isDeleted" ></input><br /><br />
     <label>Date d'inscription : </label>
     <input type="text" ng-model="obj.subscriptionDate" ></input><br /><br />
+    <label>Notes/Commentaires : </label><br />
+    <textarea rows="4" cols="50" ng-model="obj.notes" ></textarea><br /><br />
+
+    <label>Suppression logique : </label>
+    <input type="text" ng-model="obj.isDeleted" ></input><br /><br />
     <label>Inscrit pour trimestre : </label>
     <input type="text" ng-model="obj.trimesterSubscription" ></input><br /><br />
     <label>Inscrit à l'année : </label>
     <input type="text" ng-model="obj.yearSubscription" ></input><br /><br />
-    <button ng-click="update(obj)" >Sauvegarder</button>
+    <button ng-click="update(obj)" class="btn2 btn btn-primary">Sauvegarder</button>
     <br /><br /><br /><br /><br /><br /><br /><br />
+    
+    </div>
+    </div>
     </div>
     <script>
       //  var students = <%- JSON.stringify(Sstudents) %>

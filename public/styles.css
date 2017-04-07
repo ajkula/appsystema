@@ -6,20 +6,17 @@ body {
 
 button {
     position: absolute;
-    left: 220px;
+    right: 20px;
+}
+
+.btn2 {
+    position: absolute;
+    right: 330px;
 }
 
 input {
     position: absolute;
     left: 220px;
-}
-
-label {
-    margin: 15px;
-}
-
-hr {
-    margin-top: 5px;
 }
 
 .liste {
@@ -29,11 +26,13 @@ hr {
 }
 
 .summary {
+    position: relative;
     border-collapse: 5px;
     background-color: rgba(201, 145, 232, 0.15);
     text-align: left;
     text-shadow:  1px 1px #919198;
     font: 700;
+    top: 25px;
 }
 
 .editor {
@@ -42,4 +41,52 @@ hr {
     text-align: left;
     text-shadow:  1px 1px #919198;
     font: 700;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.pad {
+    margin-left: 20px;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.lefty {
+    position: relative;
+    left: -320px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
