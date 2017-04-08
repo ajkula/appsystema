@@ -90,3 +90,8 @@ input {
     visibility: visible;
     opacity: 1;
 }
+
+.fixtop {
+    position: fixed;
+    top: 0;
+}

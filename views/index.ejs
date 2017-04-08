@@ -21,8 +21,8 @@
 <body ng-controller="MainController as vm" ng-show="loaded">
 <div class="container-fluid">
 <div class="row">
-<div class="col-sm-1"></div>
-<div class="col-sm-7 pad">
+
+<div class="col-sm-5 pad">
 
     <details class="summary well well-sm">
         <summary>Créer un nouvel élève</summary><br /><br />
@@ -50,7 +50,7 @@
         <input type="text" ng-model="data.trimesterSubscription" ></input><br /><br />
         <label>Inscrit à l'année : </label>
         <input type="text" ng-model="data.yearSubscription" ></input><br /><br />
-        <button ng-click="new(data)" class="btn btn-primary" >Créer l'élève</button>
+        <button ng-click="new(data)" class="btn2 btn btn-primary" >Créer l'élève</button>
         <br /><br /><br /><br />
     </details>
  <br /><br />
@@ -65,10 +65,10 @@
             <br /> 
     </li>
 </ul>
-        
+        </div>
        
             
-   
+   <div class="col-sm-6 pad fixtop">
     <div class="editor"><br /><br />
     <label>Nom complet : </label>
     <input type="text" ng-model="obj.fullName" ></input><br /><br />
@@ -99,6 +99,7 @@
     <br /><br /><br /><br /><br /><br /><br /><br />
     
     </div>
+    
     </div>
     </div>
     <script>
