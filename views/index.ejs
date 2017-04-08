@@ -29,7 +29,10 @@
         <label>Nom complet : </label>
         <input type="text" ng-model="data.fullName" ></input><br /><br />
         <label>Club : </label>
-        <input type="text" ng-model="data.club" ></input><br /><br />
+            <select ng-model="obj.club">
+            <option value="Cercle">Cercle</option>
+            <option value="Hotel-dieu ">Hotel-dieu </option>
+            </select><br /><br />
         <label>Date de naissance : </label>
         <input type="text" ng-model="data.birthdate" ></input><br /><br />
         <label>Téléphone : </label>
@@ -73,7 +76,10 @@
     <label>Nom complet : </label>
     <input type="text" ng-model="obj.fullName" ></input><br /><br />
     <label>Club : </label>
-    <input type="text" ng-model="obj.club" ></input><br /><br />
+        <select ng-model="obj.club">
+        <option value="Cercle">Cercle</option>
+        <option value="Hotel-dieu ">Hotel-dieu </option>
+        </select><br /><br />
     <label>Date de naissance : </label>
     <input type="text" ng-model="obj.birthdate" ></input><br /><br />
     <label>Téléphone : </label>
