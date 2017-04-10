@@ -29,7 +29,7 @@ app.get('/systema', function(req, res) {
             if (err) {
                 res.send(err);
             }
-            res.render('index', { Sstudents: students });
+            res.render('index');
             
         });
     
