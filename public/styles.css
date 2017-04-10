@@ -2,11 +2,23 @@ body {
     margin: 5px;
     background-color: whitesmoke;
     font-size: 18px;
+    background: repeating-linear-gradient(
+        45deg,
+        #ccebff,
+        #ccebff 10px,
+        #ccffee 10px,
+        #ccffee 20px
+    );
 }
 
 select  {
     left: 260px;
     position: absolute;
+}
+
+button:hover, input:hover {
+  box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+  transform: scale(1.05);
 }
 
 button {
@@ -41,7 +53,7 @@ input {
 
 .editor {
     border-collapse: 5px;
-    background-color: rgba(153, 191, 48, 0.15);
+    background-color: rgba(255, 77, 163, 0.25);
     text-align: left;
     text-shadow:  1px 1px #919198;
     font: 700;
